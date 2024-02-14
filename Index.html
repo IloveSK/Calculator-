@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calculator</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            color: #0794f2;
+        }
+        #box {
+            width: 70%;
+            height: 300px;
+            border: 1px solid black;
+            margin: 200px auto;
+            padding: 20px;
+        }
+        input {
+            padding: 8px;
+            width: 70px;
+            border: 1px solid #0794f2;
+            outline-color: #0794f2;
+        }
+        #display {
+            width: 210px;
+        }
+        input:hover {
+            background: lightsteelblue;
+            color: white;
+            font-weight: bolder;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <table id="box">
+        <tr>
+            <th colspan="3"><input type="text"id="display"></th>
+            <th><input type="button" value="C" onclick="clr()"></th>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="pick(1)"></td>
+            <td><input type="button" value="2"onclick="pick(2)"></td>
+            <td><input type="button" value="3"onclick="pick(3)"></td>
+            <td><input type="button" value="/"onclick="pick('/')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="4"onclick="pick(4)"></td>
+            <td><input type="button" value="5"onclick="pick(5)"></td>
+            <td><input type="button" value="6"onclick="pick(6)"></td>
+            <td><input type="button" value="*"onclick="pick('*')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="7"onclick="pick(7)"></td>
+            <td><input type="button" value="8"onclick="pick(8)"></td>
+            <td><input type="button" value="9"onclick="pick(9)"></td>
+            <td><input type="button" value="-"onclick="pick('-')"></td>
+        </tr>
+
+        <tr>
+            <td><input type="button" value="."onclick="pick('.')"></td>
+            <td><input type="button" value="0"onclick="pick(0)"></td>
+            <td><input type="button" value="="onclick="slove()"></td>
+            <td><input type="button" value="+"onclick="pick('+')"></td>
+        </tr>
+    </table>
+    <script>
+        function pick(val) {
+            document.getElementById('display').value += val;
+        }
+        function slove() {
+            var x = document.getElementById('display').value;
+            var res = eval(x);
+            document.getElementById('display').value = res;
+        }
+        function clr() {
+            document.getElementById('display').value = ' ';
+        }
+    </script>
+</body>
+
+</html>
